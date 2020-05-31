@@ -1,0 +1,41 @@
+{
+  "name": "sport-chat",
+  "version": "1.0.0",
+  "description": "a chat application built with node, mongodb, express and socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samaad/sport-chat.git"
+  },
+  "keywords": [
+    "socket-io",
+    "node",
+    "mongodb"
+  ],
+  "author": "shoaib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samaad/sport-chat/issues"
+  },
+  "homepage": "https://github.com/samaad/sport-chat#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "dependable": "^1.1.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-promise-router": "^3.0.3",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.5.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.16",
+    "socket.io": "^2.3.0"
+  }
+}
