@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <title>Footballkik</title>
+    <title><%= title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="/uploads/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/css/login.css">
-
 </head>
 
 <body>
@@ -29,7 +27,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <h1 class="logo-div">
-                                <a href="/">Sport Chat</a>
+                                <a href="/">Sport Chat<</a>
                             </h1>
                         </div>
 
@@ -46,6 +44,7 @@
                                     </h2>
 
                                 </li>
+
 
                                 <li class="reg_link2">
                                     <h2 class="reg-div">
@@ -65,34 +64,28 @@
 
 <div id="main">
     <div class="main">
-        <form action="/" method="post">
-            
-            <h1>
-                <a href="/auth/facebook" class="btn-social btn-facebook btn-lg">
-                    <i class="fa fa-facebook"></i> Login With Facebook
-                </a>
-            </h1>
-            
-            <h1>
-                <a href="/auth/google" class="btn-social btn-gplus btn-lg">
-                    <i class="fa fa-google-plus"></i> Login With Google
-                </a>
-            </h1>
+        <form action="/signup" method="post">
 
             <h1>
-                Login
+                Register
             </h1>
-            
-            <% if(hasErrors) {%>
+
+            <% if(hasErrors){%>
+              <div class="alert alert-danger text-center">
+                <a href="#" class="close" data-dismiss="alert"
+                aria-label="close">&times;</a>
                 <% _.forEach(messages, function(error){ %>
-                    <div class="alert alert-danger text-center">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <%= error %><br>
-                    </div>
+                  <%= error %> <br>
                 <% }) %>
+              </div>
             <% } %>
 
             <div class="inset">
+                <p>
+                  <label for="username">USERNAME</label>
+                  <input type="text" name="username" class="" placeholder="">
+                </p>
+
                 <p>
                     <label for="email">EMAIL ADDRESS</label>
                     <input type="text" name="email" placeholder="" />
@@ -105,8 +98,8 @@
             </div>
 
             <p class="p-container">
-                <span><a href="/signup">Not Yet Registered?</a></span>
-                <input type="submit" class="login-log" style=" background: #3bb5ec; border: #3bb5ec;" value="Login">
+                <span><a href="/">Login</a></span>
+                <input type="submit" class="login-log" style=" background: #3bb5ec; border: #3bb5ec;" value="Register">
             </p>
         </form>
     </div>
