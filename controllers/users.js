@@ -3,7 +3,6 @@ module.exports = function(_, passport, User, validator){
     SetRouting : function(router){
       router.get('/', this.indexPage);
       router.get('/signup', this.signupPage);
-      router.get('/home', this.homePage);
       router.get('/auth/facebook', this.getFacebookLogin);
       router.get('/auth/facebook/callback', this.facebookLogin);
       router.get('/auth/google', this.getGoogleLogin);
@@ -33,11 +32,7 @@ module.exports = function(_, passport, User, validator){
       const errors = req.flash('error');
       return res.render('signup', {title: 'Sport-Chat | Login', messages: errors, hasErrors: errors.length > 0});
     },
-    homePage: function(req, res){
-      return res.render('home');
-    },
-
-
+    
      postValidation: function(req, res, next) {
         const err = validator.validationResult(req);
         const reqErrors = err.array();
