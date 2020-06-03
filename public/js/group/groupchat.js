@@ -2,7 +2,7 @@ $(document).ready(function(){
   const socket = io();
 
   var room = $('#groupName').val();
-
+  var sender = $('#sender').val();
   socket.on('connect', () =>{
     console.log("aah user connected");
 
@@ -15,8 +15,7 @@ $(document).ready(function(){
   })
 
   socket.on('newMessage', function(data){
-    console.log(data.text);
-    console.log(data.room);
+    console.log(data);
   });
 
   $('#message-form').on('submit', function(e){
@@ -27,6 +26,7 @@ $(document).ready(function(){
     socket.emit('createMessage',{
       text: msg,
       room: room,
+      sender: sender,
     },function(){
       $('#msg').val('');
     })
