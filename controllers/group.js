@@ -8,7 +8,7 @@ module.exports = function(Users, async){
     },
     groupPage: function(req, res){
       const name = req.params.name;
-      res.render('groupchat/group', {title: 'Footballkik - Group'})
+      res.render('groupchat/group', {title: 'Footballkik - Group', groupName:name})
     },
     groupPostPage: function(req, res){
       

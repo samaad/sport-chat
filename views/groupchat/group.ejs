@@ -109,14 +109,15 @@
 
                             <div class="message_write">
                               <form action="#" id="message-form" method="post">
-
-                                  <textarea class="form-control" name="message" id="msg" placeholder="Type a message"></textarea>
-                                  <div class="clearfix"></div>
-                                  <div class="chat_bottom">
-                                      <button id="send-message" class="pull-right btn btn-primary" style="background: #4aa1f3; border: #4aa1f3; ">
-                                          Send
-                                      </button>
-                                  </div>
+                                <input type="hidden" name="groupName" id="groupName" value="<%= groupName %>">
+                                
+                                <textarea class="form-control" name="message" id="msg" placeholder="Type a message"></textarea>
+                                <div class="clearfix"></div>
+                                <div class="chat_bottom">
+                                    <button id="send-message" class="pull-right btn btn-primary" style="background: #4aa1f3; border: #4aa1f3; ">
+                                        Send
+                                    </button>
+                                </div>
                               </form>
                             </div>
                         </div>
