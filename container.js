@@ -6,6 +6,11 @@ const container = dependable.container();
 const simpleDependecies = [
     ['_', 'lodash'],
     ['passport', 'passport'],
+    ['formidable', 'formidable'],
+    ['async', 'async'],
+    ['Club', './models/clubs'],
+    ['Users', './models/user'],
+    //  ['aws', './helpers/AWSUpload'],
     ['validator', 'express-validator']
 ];
 
