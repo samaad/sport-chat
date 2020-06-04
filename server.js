@@ -14,7 +14,7 @@ const container = require('./container');
 container.resolve(function(users, _){
   mongoose.Promise = global.Promise;
   mongoose.set('useCreateIndex', true)
-  mongoose.connect('mongodb://localhost:27017/sport-chat',  { useUnifiedTopology: true, useNewUrlParser: true })
+  mongoose.connect('mongodb://localhost:27017/shoaib',  { useUnifiedTopology: true, useNewUrlParser: true })
   const app = SetupExpress();
 
   function SetupExpress() {
@@ -36,6 +36,8 @@ container.resolve(function(users, _){
 
   function ConfigureExpress(app){
     require('./passport/passport-local');
+    require('./passport/passport-facebook');
+    require('./passport/passport-google');
     app.use(express.static('public'));
     app.use(cookieParser());
     app.set('view engine', 'ejs');
