@@ -25,24 +25,24 @@ passport.use(new FacebookStrategy({
     
 }, (req, token, refreshToken, profile, done) => {
     
-    User.findOne({facebook:profile.id}, (err, user) => {
+    User.findOne({facebook:profile.id}, (err, userData) => {
        if(err){
            return done(err);
        }
         
-        if(user){
-            return done(null, user);
+        if(userData){
+            return done(null, userData);
         }else{
-            const newUser = new User();
-            newUser.facebook = profile.id;
-            newUser.fullname = profile.displayName;
-            newUser.username = profile.displayName;
-            newUser.email = profile._json.email;
-            newUser.userImage = 'https://graph.facebook.com/'+profile.id+'/picture?type=large';
-            newUser.fbTokens.push({token:token});
+            const user = new User();
+            user.facebook = profile.id;
+            user.fullname = profile.displayName;
+            user.username = profile.displayName;
+            user.email = profile._json.email;
+            user.userImage = 'https://graph.facebook.com/'+profile.id+'/picture?type=large';
+            user.fbTokens.push({token:token});
             
-            newUser.save((err) => {
-                return done(null, newUser);
+            user.save((err) => {
+                return done(null, user);
             })
         }
     })

@@ -53,7 +53,6 @@ passport.use('local.login', new LocalStrategy({
         if(err){
            return done(err);
         }
-         console.log("findOne", user);
         const messages = [];
         if(!user || !user.validUserPassword(password)){
             messages.push('Email Does Not Exist or Password is Invalid');
